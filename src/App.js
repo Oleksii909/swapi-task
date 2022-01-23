@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route, Routes} from "react-router-dom";
+import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className='container pt-3'>
+            <h1>Start Wars.</h1>
+            <Routes>
+                <Route path='/' element={ <UsersContainer /> } />
+                <Route path='/profile/:id' element={ <ProfileContainer /> }/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
