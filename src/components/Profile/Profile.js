@@ -9,7 +9,7 @@ const Profile = (props) => {
             <Card bg={'dark'} className="mt-2" text={'light'}>
                 <Card.Header>User: {props.user.name}</Card.Header>
                 <Card.Body>
-                    <div>Height: <span contentEditable={true}>{props.user.height}</span></div>
+                    <div>Height: {props.user.height}</div>
                     <div>Mass: {props.user.mass}</div>
                     <div>Hair color: {props.user.hair_color}</div>
                     <div>Skin color: {props.user.skin_color}</div>

@@ -27,7 +27,7 @@ const Users = (props) => {
      * @type {JSX[]}
      */
     const users = props.users.map((user, index) => {
-        return (<User user={user}/>)
+        return (<User key={index} user={user}/>)
     })
 
     /**
@@ -40,7 +40,8 @@ const Users = (props) => {
         <h2>Users Page</h2>
         {pages.map( (p, i) => {
             return (<span
-                className={props.currentPage === i+1 && 'fw-bold'}
+                key={i}
+                className={props.currentPage === i+1 ? 'fw-bold' : ''}
                 style={{cursor: 'pointer'}}
                 onClick={(e) => { pageChangeHandler(i+1)} }>{i+1} </span>)
         })}
