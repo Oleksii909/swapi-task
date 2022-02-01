@@ -5,11 +5,13 @@ import {Row} from "react-bootstrap";
 
 const Users = (props) => {
     const pageChangeHandler = (pageNumber) => {
-        props.setCurrentPage(pageNumber);
+
         axios.get(`https://swapi.dev/api/people?page=${pageNumber}`)
             .then(response => {
                 props.setUsers(response.data.results);
+                props.setCurrentPage(pageNumber);
             });
+
     }
 
     useEffect(() => {
